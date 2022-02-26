@@ -1,6 +1,6 @@
 ## Steps for deploy project
 
-1. Clone project (link)
+1. Clone project ```git clone https://github.com/Tyrqvir/CoinRateList.git```
 2. Write ```make local-deploy``` from root project
 3. Check
    endpoint `https://127.0.0.1:8881/api/content/v1/rates/coins/{coin}/currensies/{currency}/start/{start}/end/{end}`
