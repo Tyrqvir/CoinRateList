@@ -1,0 +1,13 @@
+kernel:
+    resource: ../../src/Kernel.php
+    type: annotation
+
+public:
+    resource: ../../src/**/V1/**/*Action.php
+    type: annotation
+    prefix: /api/content/v1
+    requirements:
+        coin: '\D+'
+        currency: '\D+'
+        start: '\d+'
+        end: '\d+'

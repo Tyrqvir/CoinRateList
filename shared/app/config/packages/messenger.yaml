@@ -1,0 +1,46 @@
+framework:
+    messenger:
+        default_bus: command.bus
+
+        buses:
+            command.bus:
+                middleware:
+                    - App\Shared\Messenger\AuditMiddleware
+                    - validation
+                    - doctrine_transaction
+
+            event.bus:
+                default_middleware: allow_no_handlers
+                middleware:
+                    - validation
+
+            query.bus:
+                middleware:
+                    - App\Shared\Messenger\AuditMiddleware
+                    - validation
+
+        # Uncomment this (and the failed transport below) to send failed messages to this transport for later handling.
+        failure_transport: failed
+        transports:
+            sync: 'sync://'
+            failed: 'doctrine://default?queue_name=failed'
+            async:
+                dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+                retry_strategy:
+                    max_retries: 3
+                    # milliseconds delay
+                    delay: 30000
+                    # causes the delay to be higher before each retry
+                    # e.g. 1 second delay, 2 seconds, 4 seconds
+                    multiplier: 2
+
+        routing:
+            'App\Shared\Message\Contracts\CommandInterface': async
+            'App\Shared\Message\Contracts\EventInterface': async
+            'App\Shared\Message\Contracts\QueryInterface': sync
+
+when@test:
+    framework:
+        messenger:
+            transports:
+                async: 'in-memory://'
