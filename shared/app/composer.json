@@ -7,7 +7,6 @@
     "php": ">=7.4",
     "ext-ctype": "*",
     "ext-iconv": "*",
-    "codeception/module-asserts": "^2.0",
     "doctrine/annotations": "^1.13",
     "doctrine/doctrine-bundle": "^2.5",
     "doctrine/doctrine-migrations-bundle": "^3.2",
@@ -30,6 +29,7 @@
   "require-dev": {
     "codeception/module-doctrine2": "^2.0",
     "codeception/module-symfony": "^2.1",
+    "codeception/module-asserts": "^2.0",
     "psalm/plugin-symfony": "^3.1",
     "roave/security-advisories": "dev-latest",
     "symfony/maker-bundle": "^1.37",
