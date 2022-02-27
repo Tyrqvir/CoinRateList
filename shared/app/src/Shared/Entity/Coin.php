@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=CoinRepository::class)
+ * @ORM\Table(
+ *     indexes={@ORM\Index(columns={"name"})},
+ *     uniqueConstraints={@ORM\UniqueConstraint(name="coin_unique",columns={"name"})}
+ *   )
  */
 class Coin
 {

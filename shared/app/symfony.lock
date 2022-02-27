@@ -533,6 +533,22 @@
     "symfony/translation-contracts": {
         "version": "v2.5.0"
     },
+    "symfony/twig-bridge": {
+        "version": "v5.4.3"
+    },
+    "symfony/twig-bundle": {
+        "version": "5.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.4",
+            "ref": "bb2178c57eee79e6be0b297aa96fc0c0def81387"
+        },
+        "files": [
+            "config/packages/twig.yaml",
+            "templates/base.html.twig"
+        ]
+    },
     "symfony/validator": {
         "version": "5.4",
         "recipe": {
@@ -551,11 +567,27 @@
     "symfony/var-exporter": {
         "version": "v5.4.3"
     },
+    "symfony/web-profiler-bundle": {
+        "version": "5.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.3",
+            "ref": "24bbc3d84ef2f427f82104f766014e799eefcc3e"
+        },
+        "files": [
+            "config/packages/web_profiler.yaml",
+            "config/routes/web_profiler.yaml"
+        ]
+    },
     "symfony/yaml": {
         "version": "v5.4.3"
     },
     "theseer/tokenizer": {
         "version": "1.2.1"
+    },
+    "twig/twig": {
+        "version": "v3.3.8"
     },
     "vimeo/psalm": {
         "version": "4.21.0"

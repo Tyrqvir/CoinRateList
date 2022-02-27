@@ -10,7 +10,6 @@ use App\Shared\Message\Query\RatesByCriteriaQuery;
 use App\Shared\Service\CacheService;
 use JMS\Serializer\SerializerInterface;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
-use Symfony\Component\Serializer\Serializer;
 use Symfony\Contracts\Cache\ItemInterface;
 
 final class RatesByCriteriaQueryHandler implements MessageHandlerInterface

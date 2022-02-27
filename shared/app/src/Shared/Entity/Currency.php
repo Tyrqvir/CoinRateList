@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity()
+ * @ORM\Table(indexes={@ORM\Index(columns={"name"})})
  */
 class Currency
 {
@@ -22,7 +23,7 @@ class Currency
     private int $id;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=false, unique="true")
+     * @ORM\Column(type="string", length=100, nullable=false)
      */
     private string $name;
 

@@ -31,12 +31,7 @@ class RateRepository extends ServiceEntityRepository
 
         $qb->select('rate.amount, rate.createAt')
             ->from(Coin::class, 'coin')
-            ->leftJoin(
-                Currency::class,
-                'currency',
-                Join::WITH,
-                'coin.id = currency.id'
-            )
+            ->innerJoin(Currency::class, 'currency')
             ->leftJoin(
                 Rate::class,
                 'rate',
